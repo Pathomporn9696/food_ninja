@@ -183,26 +183,29 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 SizedBox(height: 20.h),
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6.r),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black26,
-                          blurRadius: 6.0.r,
-                          offset: Offset(0, 2),
-                        )
-                      ]),
-                  width: 82.w,
-                  height: 32.h,
-                  child: Center(
-                    child: Text(
-                      'Buy Now',
-                      style: TextStyle(
-                          color: Colors.greenAccent,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold),
+                GestureDetector(
+                  onTap: ()=>Navigator.pushNamed(context, '/vouncherPage'),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6.r),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 6.0.r,
+                            offset: Offset(0, 2),
+                          )
+                        ]),
+                    width: 82.w,
+                    height: 32.h,
+                    child: Center(
+                      child: Text(
+                        'Buy Now',
+                        style: TextStyle(
+                            color: Colors.greenAccent,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 ),

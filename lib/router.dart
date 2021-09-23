@@ -5,6 +5,8 @@ import 'package:food_ninja/user_chat_page.dart';
 import 'package:food_ninja/widget/call_page.dart';
 import 'package:food_ninja/widget/chat_list_page.dart';
 import 'package:food_ninja/widget/confirm_order.dart';
+import 'package:food_ninja/widget/detail_menu.dart';
+import 'package:food_ninja/widget/detail_res.dart';
 import 'package:food_ninja/widget/edit_location.dart';
 import 'package:food_ninja/widget/edit_payment.dart';
 import 'package:food_ninja/widget/explore_menu.dart';
@@ -60,4 +62,6 @@ final Map<String, WidgetBuilder> routes = {
   '/EditPayment':(BuildContext context)=>EditPayment(),
   '/EditLocation':(BuildContext context)=>EditLocation(),
   '/MapScreen':(BuildContext context)=>MapScreen(),
+  '/DetailRes':(BuildContext context)=>DetailRes(),
+  '/DetailMenu':(BuildContext context)=>DetailMenuPage(),
 };
