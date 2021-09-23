@@ -25,6 +25,7 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: CustomScrollView(
         slivers: [
           _buildSliverHead(),
@@ -32,6 +33,36 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
             child: _buildDetail(),
           )
         ],
+      ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 20.h),
+        child: GestureDetector(
+          onTap: () => Navigator.popAndPushNamed(context, '/mainScreen'),
+          child: Container(
+            height: 57.h,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15.r),
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [
+                  Colors.greenAccent,
+                  Colors.green,
+                ],
+              ),
+            ),
+            child: Center(
+              child: Text(
+                'Add To Chart',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
@@ -51,7 +82,6 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
           _buildTopbar(),
           _buildNameAndDetailMenu(),
           _buildTestimonials(),
-          _buildBtnAddChart(),
         ],
       ),
     );
@@ -302,42 +332,6 @@ class _DetailMenuPageState extends State<DetailMenuPage> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  _buildBtnAddChart() {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: 25.w,
-      ),
-      child: GestureDetector(
-        onTap: () => Navigator.popAndPushNamed(context, '/mainScreen'),
-        child: Container(
-          width: double.infinity,
-          height: 57,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15.r),
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [
-                Colors.greenAccent,
-                Colors.green,
-              ],
-            ),
-          ),
-          child: Center(
-            child: Text(
-              'Add To Chart',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 14.sp,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
       ),
     );
   }
